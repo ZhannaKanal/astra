@@ -106,11 +106,61 @@
         />
       </div>
       <button
-            class="w-full my-6 p-4 bg-[#F8F8F8] rounded-[8px] text-[#909090] hover:bg-[white] hover:text-[#909090] border-[#F8F8F8] border-solid border-[2px]"
-            type="button"
-          >
-            Save changes
-          </button>
+        class="w-full my-6 p-4 bg-[#F8F8F8] rounded-[8px] text-[#909090] hover:bg-[white] hover:text-[#909090] border-[#F8F8F8] border-solid border-[2px]"
+        type="button"
+      >
+        Save changes
+      </button>
+    </div>
+  </div>
+  <div class="mt-[150px] border-t-2 border-solid border-[#D7D7D7]">
+    <div
+      class="max-w-[1300px] w-full mx-auto flex justify-between font-medium text-[16px] border-b-2 border-solid border-[#D7D7D7] py-12"
+    >
+      <div class="">
+        <img src="~assets/icons/logo_3.svg" alt="" />
+        <p class="my-3">8 800 070 05 40</p>
+        <div class="font-normal">
+          <p>Пн-Пт 09:00 - 18:00</p>
+          <p>Сб-Вс Выходной</p>
+        </div>
+        <p class="my-3">Мы в соцсетях</p>
+        <img src="~assets/icons/i_11.svg" alt="" />
+      </div>
+      <div>
+        <p class="text-[#34398B]">Информация</p>
+        <div class="mt-3 px-5">
+          <p>Акции</p>
+          <p class="my-3">Новости</p>
+        </div>
+      </div>
+      <div>
+        <p class="text-[#34398B]">Помощь</p>
+        <div class="mt-3 px-5">
+          <p>Конфиденциальность информации</p>
+          <p class="my-3">Публичная оферта</p>
+        </div>
+      </div>
+      <div class="bg-[#F8F8F8] rounded-[16px] p-12">
+        <p class="text-[18px] text-[#34398B] text-center">Мобильное приложение</p>
+        <div class="bg-[#34398B] rounded-[14px] text-[white] flex gap-3 my-4 p-2 mx-[80px]">
+          <img src="~assets/icons/i_12.svg" alt="" />
+          <div class="">
+            <p class="text-[14px]">Доступно в </p>
+            <img src="~assets/icons/i_14.svg" alt="">
+          </div>
+        </div>
+        <div class="bg-[#34398B] rounded-[14px] text-[white] flex gap- p-2 mx-[80px]">
+          <img src="~assets/icons/i_13.svg" alt="" />
+          <div>
+            <p class="text-[14px]">Доступно в </p>
+            <img src="~assets/icons/i_15.svg" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="max-w-[1300px] w-full mx-auto">
+      <p class="text-[14px] text-[#9D9D9D] text-center py-6">© АСТРА-ЛОМБАРД — 2023</p>
     </div>
   </div>
 </template>
