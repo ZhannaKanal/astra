@@ -56,7 +56,7 @@
   </div>
   <div class="max-w-[1300px] w-full mx-auto my-12 flex gap-[50px]">
     <div class="max-w-[230px] w-full bg-[#F8F8F8] rounded-[14px]">
-      <div class="my-6">
+      <div class="my-6 px-2">
         <div class="flex gap-2 my-2">
           <img src="~assets/icons/i_6.svg" alt="" />
           <p>Account</p>
@@ -74,39 +74,39 @@
           <p>List of wishes</p>
         </div>
       </div>
-      <div class="flex gap-2 mt-[100px]">
+      <div class="flex gap-2 mt-[100px] px-2">
         <img src="~assets/icons/i_10.svg" alt="" />
         <p>Log out</p>
       </div>
     </div>
-    <div>
+    <div class="max-w-[640px] w-full ">
       <p class="text-[32px] font-medium mb-6">Profile</p>
-      <div class="flex gap-4">
+      <div class="flex justify-between gap-4">
         <input
-          class="w-50 my-2 p-3 rounded-[14px] border-[#EBEBEB] focus:text-[#FF8A00] focus:border-[#FF8A00] border-solid border-[2px] focus:outline-none"
+          class="w-full my-2 p-3 rounded-[14px] border-[#EBEBEB] focus:text-[#FF8A00] focus:border-[#FF8A00] border-solid border-[2px] focus:outline-none"
           type="text"
           placeholder="Name"
         />
         <input
-          class="w-50 my-2 p-3 rounded-[14px] border-[#EBEBEB] focus:text-[#FF8A00] focus:border-[#FF8A00] border-solid border-[2px] focus:outline-none"
+          class="w-full my-2 p-3 rounded-[14px] border-[#EBEBEB] focus:text-[#FF8A00] focus:border-[#FF8A00] border-solid border-[2px] focus:outline-none"
           type="text"
           placeholder="Surname"
         />
       </div>
-      <div class="flex gap-4">
+      <div class="flex justify-between gap-4">
         <input
-          class="w-50 my-2 p-3 rounded-[14px] border-[#EBEBEB] focus:text-[#FF8A00] focus:border-[#FF8A00] border-solid border-[2px] focus:outline-none [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+          class="w-full my-2 p-3 rounded-[14px] border-[#EBEBEB] focus:text-[#FF8A00] focus:border-[#FF8A00] border-solid border-[2px] focus:outline-none [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
           type="number"
           placeholder="Number"
         />
         <input
-          class="w-50 my-2 p-3 rounded-[14px] border-[#EBEBEB] focus:text-[#FF8A00] focus:border-[#FF8A00] border-solid border-[2px] focus:outline-none"
+          class="w-full my-2 p-3 rounded-[14px] border-[#EBEBEB] focus:text-[#FF8A00] focus:border-[#FF8A00] border-solid border-[2px] focus:outline-none"
           type="text"
           placeholder="Password"
         />
       </div>
       <button
-        class="w-full my-6 p-4 bg-[#F8F8F8] rounded-[8px] text-[#909090] hover:bg-[white] hover:text-[#909090] border-[#F8F8F8] border-solid border-[2px]"
+        class="w-[312px] mt-10 p-4 bg-[#F8F8F8] rounded-[8px] text-[#909090] hover:bg-[white] hover:text-[#909090] border-[#F8F8F8] border-solid border-[2px]"
         type="button"
       >
         Save changes
@@ -115,7 +115,7 @@
   </div>
   <div class="mt-[150px] border-t-2 border-solid border-[#D7D7D7]">
     <div
-      class="max-w-[1300px] w-full mx-auto flex justify-between font-medium text-[16px] border-b-2 border-solid border-[#D7D7D7] py-12"
+      class="max-w-[1300px] w-full mx-auto block md:flex justify-between font-medium text-[16px] border-b-2 border-solid border-[#D7D7D7] py-12 "
     >
       <div class="">
         <img src="~assets/icons/logo_3.svg" alt="" />
