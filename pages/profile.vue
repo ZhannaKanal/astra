@@ -79,7 +79,7 @@
         <p>Log out</p>
       </div>
     </div>
-    <div class="max-w-[640px] w-full ">
+    <div class="max-w-[640px] w-full">
       <p class="text-[32px] font-medium mb-6">Profile</p>
       <div class="flex justify-between gap-4">
         <input
@@ -115,7 +115,7 @@
   </div>
   <div class="mt-[150px] border-t-2 border-solid border-[#D7D7D7]">
     <div
-      class="max-w-[1300px] w-full mx-auto block md:flex justify-between font-medium text-[16px] border-b-2 border-solid border-[#D7D7D7] py-12 "
+      class="max-w-[1300px] w-full mx-auto block md:flex justify-between font-medium text-[16px] border-b-2 border-solid border-[#D7D7D7] py-12"
     >
       <div class="">
         <img src="~assets/icons/logo_3.svg" alt="" />
@@ -142,25 +142,33 @@
         </div>
       </div>
       <div class="bg-[#F8F8F8] rounded-[16px] p-12">
-        <p class="text-[18px] text-[#34398B] text-center">Мобильное приложение</p>
-        <div class="bg-[#34398B] rounded-[14px] text-[white] flex gap-3 my-4 p-2 mx-[80px]">
+        <p class="text-[18px] text-[#34398B] text-center">
+          Мобильное приложение
+        </p>
+        <div
+          class="bg-[#34398B] rounded-[14px] text-[white] flex gap-3 my-4 p-2 mx-[80px]"
+        >
           <img src="~assets/icons/i_12.svg" alt="" />
           <div class="">
-            <p class="text-[14px]">Доступно в </p>
-            <img src="~assets/icons/i_14.svg" alt="">
+            <p class="text-[14px]">Доступно в</p>
+            <img src="~assets/icons/i_14.svg" alt="" />
           </div>
         </div>
-        <div class="bg-[#34398B] rounded-[14px] text-[white] flex gap- p-2 mx-[80px]">
+        <div
+          class="bg-[#34398B] rounded-[14px] text-[white] flex gap- p-2 mx-[80px]"
+        >
           <img src="~assets/icons/i_13.svg" alt="" />
           <div>
-            <p class="text-[14px]">Доступно в </p>
-            <img src="~assets/icons/i_15.svg" alt="">
+            <p class="text-[14px]">Доступно в</p>
+            <img src="~assets/icons/i_15.svg" alt="" />
           </div>
         </div>
       </div>
     </div>
     <div class="max-w-[1300px] w-full mx-auto">
-      <p class="text-[14px] text-[#9D9D9D] text-center py-6">© АСТРА-ЛОМБАРД — 2023</p>
+      <p class="text-[14px] text-[#9D9D9D] text-center py-6">
+        © АСТРА-ЛОМБАРД — 2023
+      </p>
     </div>
   </div>
 </template>

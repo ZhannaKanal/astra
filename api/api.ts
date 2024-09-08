@@ -1,6 +1,6 @@
-import axios from 'axios';
-import { type AxiosInstance } from 'axios';
-import * as controller from './index';
+import axios from "axios";
+import { type AxiosInstance } from "axios";
+import * as controller from "./index";
 
 class Api {
   private instance: AxiosInstance;
@@ -10,8 +10,8 @@ class Api {
     });
 
     this.instance.interceptors.request.use((request) => {
-      if (localStorage['ACCESS_TOKEN']) {
-        request.headers.Authorization = `Bearer ${localStorage['ACCESS_TOKEN']}`;
+      if (localStorage["ACCESS_TOKEN"]) {
+        request.headers.Authorization = `Bearer ${localStorage["ACCESS_TOKEN"]}`;
       }
       return request;
     });

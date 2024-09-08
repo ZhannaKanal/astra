@@ -49,8 +49,8 @@ export default {
   setup() {
     const dataStore = useDataStore();
     const loginData = reactive({
-      password: '',
-      phoneNumber: '',
+      password: "",
+      phoneNumber: "",
     });
     const loading = ref(false);
 
