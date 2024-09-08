@@ -38,6 +38,9 @@
         </div>
       </div>
     </div>
+    <div class="mx-[700px] my-[100px]">
+      <nuxt-link to="profile">Profile</nuxt-link>
+    </div>
   </div>
 </template>
 
