@@ -91,11 +91,14 @@ export default {
       )
         return;
       loader.value = true;
-      await dataStore.register(registerData);
+      const successRegister = await dataStore.register(registerData);
+      if(successRegister){
+        navigateTo({name: 'otp', query: {phoneNumber: registerData.phoneNumber}})
+      }
       loader.value = false;
     };
 
-    return { registerData, submitForm };
+    return { registerData, loader, submitForm };
   },
 };
 </script>

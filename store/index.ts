@@ -17,9 +17,11 @@ export const useDataStore = defineStore("dataStore", {
     },
     async register(formData: RegisterData) {
       try {
-        const response = await this.api.register(formData);
+        await this.api.register(formData);
+        return true
       } catch (error: any) {
         console.log("this is an error: ", error.response.data.exception);
+        return false
       }
     },
   },
