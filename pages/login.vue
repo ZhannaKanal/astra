@@ -31,7 +31,7 @@
             <p>Don't have an account?</p>
             <nuxt-link
               class="text-[#34398B] font-medium hover:underline hover:decoration-solid"
-              to="/"
+              to="/register"
               >Register</nuxt-link
             >
           </div>

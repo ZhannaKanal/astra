@@ -92,8 +92,11 @@ export default {
         return;
       loader.value = true;
       const successRegister = await dataStore.register(registerData);
-      if(successRegister){
-        navigateTo({name: 'otp', query: {phoneNumber: registerData.phoneNumber}})
+      if (successRegister) {
+        navigateTo({
+          name: "otp",
+          query: { phoneNumber: registerData.phoneNumber },
+        });
       }
       loader.value = false;
     };
