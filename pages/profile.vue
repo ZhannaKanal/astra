@@ -67,7 +67,7 @@
         </div>
         <div class="flex gap-2 my-2">
           <img src="~assets/icons/i_8.svg" alt="" />
-          <p>My bonuses</p>
+          <nuxt-link to="bonus"><p>My bonuses</p></nuxt-link>
         </div>
         <div class="flex gap-2">
           <img src="~assets/icons/i_9.svg" alt="" />
@@ -89,7 +89,7 @@
           placeholder="Name"
         />
         <input
-        v-model="profile.firstName"
+          v-model="profile.firstName"
           class="w-full my-2 p-3 rounded-[14px] border-[#EBEBEB] focus:text-[#FF8A00] focus:border-[#FF8A00] border-solid border-[2px] focus:outline-none"
           type="text"
           placeholder="Surname"
@@ -97,7 +97,7 @@
       </div>
       <div class="flex justify-between gap-4">
         <input
-        v-model="profile.phoneNumber"
+          v-model="profile.phoneNumber"
           class="w-50 my-2 p-3 rounded-[14px] border-[#EBEBEB] focus:text-[#FF8A00] focus:border-[#FF8A00] border-solid border-[2px] focus:outline-none [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
           type="text"
           placeholder="Number"
@@ -109,7 +109,6 @@
         /> -->
       </div>
       <button
-        
         class="w-[312px] mt-10 p-4 bg-[#F8F8F8] rounded-[8px] text-[#909090] hover:bg-[white] hover:text-[#909090] border-[#F8F8F8] border-solid border-[2px]"
         type="button"
       >
@@ -180,35 +179,27 @@
 <script lang="ts">
 import axios from "axios";
 import { ref, onMounted } from "vue";
+import { type ProfileData } from "@/api/controllers/types";
 
 export default {
   setup() {
-    interface Profile {
-      firstName: string;
-      lastName: string;
-      phoneNumber: string;
-      // Add any other fields your API returns
-    }
+    const dataStore = useDataStore();
 
-    const profile = ref<Profile | null>(null);
+    const profile = ref<ProfileData>({
+      firstName: "",
+      lastName: "",
+      phoneNumber: "",
+      // Add any other fields your API returns
+    });
 
     onMounted(async () => {
-      try {
-        const response = await axios.get<Profile>(
-          "https://api.store.astra-lombard.kz/api/personal/profile",
-          {
-            headers: {
-              Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjIyMWU1YTU1LTZjM2EtNDM3NC04NWQwLWEwY2I1YTkwYzU0YiIsInVzZXJUeXBlIjoic3RvcmUiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJub0BlbWFpbC5jb20iLCJmdWxsTmFtZSI6ItCW0YPQvNCw0LPQsNC70Lgg0JrQsNC90LDQs9Cw0YIiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoi0JbRg9C80LDQs9Cw0LvQuCIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL3N1cm5hbWUiOiLQmtCw0L3QsNCz0LDRgiIsImlwQWRkcmVzcyI6IjUuMjUxLjIwMi43NCIsImltYWdlX3VybCI6IiIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL21vYmlsZXBob25lIjoiKzc3MDcxNDMxMDcwIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiU3RvcmUiLCJleHAiOjE3MjY2ODAzNDN9.ctOf2DGUb7ICOaVOOS48uwOSV-5bQeSNzcL53R6efMU`, // Replace with your actual token
-            },
-          }
-        );
-        profile.value = response.data;
-      } catch (error) {
-        console.error("Error fetching profile data:", error);
+      const response = await dataStore.getProfileData();
+      if (response != undefined) {
+        profile.value = response;
       }
     });
 
-    return {profile};
+    return { profile };
   },
 };
 </script>

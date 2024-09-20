@@ -25,4 +25,18 @@ export class UserApi {
     });
     return data;
   }
+  async getProfileData() {
+    const { data } = await this.request<types.ProfileData>({
+      url: "/personal/profile",
+      method: "GET",
+    });
+    return data;
+  }
+  async getBonuses() {
+    const { data } = await this.request<types.Bonusdata>({
+      url: "/v1/bonuses",
+      method: "GET",
+    });
+    return data;
+  }
 }

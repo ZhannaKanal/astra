@@ -10,3 +10,13 @@ export type RegisterData = {
   password: string;
   passwordConfirmation: string;
 };
+
+export type ProfileData = {
+  firstName: string;
+  lastName: string;
+  phoneNumber: string;
+};
+
+export type Bonusdata = {
+  bonuses: number;
+};

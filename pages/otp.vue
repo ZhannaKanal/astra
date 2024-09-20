@@ -55,40 +55,37 @@ export default defineComponent({
     const otp = ref<string>("1234");
     // const lastName = ref<string>("");
     const phoneNumber = route.query.phoneNumber as string;
-     console.log(route);
+    console.log(route);
 
-
-    const validateOtp = async (
-      otp: string,
-      phoneNumber: string
-    ) => {
+    const validateOtp = async (otp: string, phoneNumber: string) => {
       try {
-        // const response = await axios.post(
-        //   "https://api.store.astra-lombard.kz/api/users/confirm-registration",
-        //   {
-        //     phoneNumber,
-        //     code: otp,
-        //   }
-        // );
-        navigateTo({name:"profile"})
+        const response = await axios.post(
+          "https://api.store.astra-lombard.kz/api/users/confirm-registration",
+          {
+            phoneNumber,
+            code: otp,
+          },
+        );
+        navigateTo({ name: "profile" });
       } catch (error) {
         console.error("Error validating OTP:", error);
-        
       }
     };
 
-    watch(otp, async (newOtp) => {
-      if (phoneNumber && phoneNumber.length == 11) {
-        if (newOtp.length == 4) {
-          await validateOtp(newOtp, phoneNumber);
+    watch(
+      otp,
+      async (newOtp) => {
+        if (phoneNumber && phoneNumber.length == 11) {
+          if (newOtp.length == 4) {
+            await validateOtp(newOtp, phoneNumber);
+          }
+        } else {
+          console.error("Error! Phone number is not valid.");
         }
-      } else {
-        console.error("Error! Phone number is not valid.");
-      }
-    },
-    // {"immediate":true
-    // }
-  );
+      },
+      // {"immediate":true
+      // }
+    );
 
     return { phoneNumber, otp, validateOtp };
   },

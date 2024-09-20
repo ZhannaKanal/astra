@@ -11,6 +11,7 @@ export const useDataStore = defineStore("dataStore", {
       try {
         const response = await this.api.login({ password, phoneNumber });
         localStorage.setItem("ACCESS_TOKEN", response.token);
+        navigateTo("/profile");
       } catch (error: any) {
         console.log("this is an error: ", error.response.data.exception);
       }
@@ -22,6 +23,22 @@ export const useDataStore = defineStore("dataStore", {
       } catch (error: any) {
         console.log("this is an error: ", error.response.data.exception);
         return false;
+      }
+    },
+    async getProfileData() {
+      try {
+        const response = await this.api.getProfileData();
+        return response;
+      } catch (error: any) {
+        console.log("Erroor", error.response.data.exception);
+      }
+    },
+    async getBonus() {
+      try {
+        const response = await this.api.getBonuses();
+        return response;
+      } catch (error: any) {
+        console.log("Erroor", error.response.data.exception);
       }
     },
   },
