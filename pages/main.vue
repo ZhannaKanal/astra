@@ -66,7 +66,7 @@
       </nuxt-link>
     </div>
   </div>
-  <div class="relative flex justify-end">
+  <div class="relative flex justify-end ">
     <img
       class="absolute z-[-1] w-full py-12"
       src="~assets/images/i_2.svg"
@@ -76,7 +76,7 @@
       Jewelry Market
     </p>
   </div>
-  <div class="max-w-[1300px] w-full mx-auto grid grid-cols-3 gap-5 my-12">
+  <div class="max-w-[1300px] w-full mx-auto grid grid-cols-3 gap-5 mt-[80px] mb-8">
     <div
       class="bg-[#E31E25] text-[white] rounded-[10px] p-4 flex items-center justify-center gap-3"
     >
@@ -96,216 +96,218 @@
       <p class="text-center text-[24px]">Sales</p>
     </div>
   </div>
+
   <div class="bg-[#F8CBCD]">
     <div class="max-w-[1300px] w-full mx-auto py-12">
       <p class="text-[50px] text-white font-medium py-12">Sales</p>
-      <div>
-        <v-sheet class="mx-auto bg-[#F8CBCD]" elevation="4" max-width="1300">
-          <v-slide-group
-            v-model="model"
-            class="pa-4"
-            selected-class="bg-success"
-            show-arrows
-          >
-            <v-slide-group-item
-              v-for="n in 8"
-              :key="n"
-              v-slot="{ isSelected, toggle, selectedClass }"
-            >
-              <v-card
-                :class="['ma-4', selectedClass]"
-                color="white-lighten-1"
-                height=""
-                width="260"
-                @click="toggle"
-              >
-                <div class="max-w-[300px] w-full mx-auto">
-                  <div class="flex gap-2 p-2">
-                    <img
-                      class="bg-[red] rounded-[8px] p-1 w-[30px] h-[30px]"
-                      src="~assets/icons/i_17.svg"
-                      alt=""
-                    />
-                    <img
-                      class="bg-[red] rounded-[8px] p-1 w-[30px] h-[30px]"
-                      src="~assets/icons/i_17.svg"
-                      alt=""
-                    />
-                    <img
-                      class="bg-[red] rounded-[8px] p-1 w-[30px] h-[30px]"
-                      src="~assets/icons/i_17.svg"
-                      alt=""
-                    />
-                  </div>
-                  <img class="mx-5" src="~assets/images/i_3.svg" alt="" />
-                  <p class="p-2">
-                    Gold ring <br />
-                    in a combined color with <br />
-                    chrysolites, cubic zirconia and ro...
-                  </p>
-                  <div class="flex p-2 gap-3 items-center">
-                    <p class="text-[#34398B] font-medium text-[24px]">
-                      5,123.21 ₸
-                    </p>
-                    <p class="text-[#909090]">10,123.21 ₸</p>
-                  </div>
-                  <div class="flex gap-4 p-2 my-4">
-                    <button
-                      class="max-w-[180px] w-full bg-[#FFEEDB] rounded-[12px] text-[#FF8A00] text-[14px] font-medium text-center py-2"
-                      type="submit"
-                    >
-                      Buy
-                    </button>
-                    <img src="~assets/icons/i_18.svg" alt="h" />
-                  </div>
-                </div>
-              </v-card>
-            </v-slide-group-item>
-          </v-slide-group>
-        </v-sheet>
-      </div>
+      <Carousel v-bind="settings" :breakpoints="breakpoints">
+        <Slide v-for="slide in 10" :key="slide">
+          <div class="carousel__item">
+            <div class="max-w-[300px] w-full mx-auto bg-[white] rounded-[14px] p-2">
+              <div class="flex gap-2 p-2">
+                <img
+                  class="bg-[red] rounded-[8px] p-1 w-[30px] h-[30px]"
+                  src="~assets/icons/i_17.svg"
+                  alt=""
+                />
+                <img
+                  class="bg-[red] rounded-[8px] p-1 w-[30px] h-[30px]"
+                  src="~assets/icons/i_17.svg"
+                  alt=""
+                />
+                <img
+                  class="bg-[red] rounded-[8px] p-1 w-[30px] h-[30px]"
+                  src="~assets/icons/i_17.svg"
+                  alt=""
+                />
+              </div>
+              <img class="mx-5" src="~assets/images/i_3.svg" alt="" />
+              <p class="p-2 text-start">
+                Gold ring <br />
+                in a combined color with <br />
+                chrysolites, cubic zirconia and ro...
+              </p>
+              <div class="flex p-2 gap-3 items-center">
+                <p class="text-[#34398B] font-medium text-[24px]">5,123.21 ₸</p>
+                <p class="text-[#909090]">10,123.21 ₸</p>
+              </div>
+              <div class="flex gap-4 p-2 my-4">
+                <button
+                  class="max-w-[180px] w-full bg-[#FFEEDB] rounded-[12px] text-[#FF8A00] text-[14px] font-medium text-center py-2"
+                  type="submit"
+                >
+                  Buy
+                </button>
+                <img src="~assets/icons/i_18.svg" alt="h" />
+              </div>
+            </div>
+          </div>
+        </Slide>
+  
+        <template #addons>
+          <Navigation />
+        </template>
+      </Carousel>
     </div>
   </div>
   <div class="bg-[#C5E7D4] my-4">
     <div class="max-w-[1300px] w-full mx-auto py-12">
       <p class="text-[50px] text-white font-medium py-12">News</p>
-      <div>
-        <v-sheet class="mx-auto bg-[#F8CBCD]" elevation="4" max-width="1300">
-          <v-slide-group
-            v-model="model"
-            class="pa-4"
-            selected-class="bg-success"
-            show-arrows
-          >
-            <v-slide-group-item
-              v-for="n in 8"
-              :key="n"
-              v-slot="{ isSelected, toggle, selectedClass }"
-            >
-              <v-card
-                :class="['ma-4', selectedClass]"
-                color="white-lighten-1"
-                height=""
-                width="260"
-                @click="toggle"
-              >
-                <div class="max-w-[300px] w-full mx-auto">
-                  <div class="flex gap-2 p-2">
-                    <img
-                      class="bg-[red] rounded-[8px] p-1 w-[30px] h-[30px]"
-                      src="~assets/icons/i_17.svg"
-                      alt=""
-                    />
-                    <img
-                      class="bg-[red] rounded-[8px] p-1 w-[30px] h-[30px]"
-                      src="~assets/icons/i_17.svg"
-                      alt=""
-                    />
-                    <img
-                      class="bg-[red] rounded-[8px] p-1 w-[30px] h-[30px]"
-                      src="~assets/icons/i_17.svg"
-                      alt=""
-                    />
-                  </div>
-                  <img class="mx-5" src="~assets/images/i_3.svg" alt="" />
-                  <p class="p-2">
-                    Gold ring <br />
-                    in a combined color with <br />
-                    chrysolites, cubic zirconia and ro...
-                  </p>
-                  <div class="flex p-2 gap-3 items-center">
-                    <p class="text-[#34398B] font-medium text-[24px]">
-                      5,123.21 ₸
-                    </p>
-                    <p class="text-[#909090]">10,123.21 ₸</p>
-                  </div>
-                  <div class="flex gap-4 p-2 my-4">
-                    <button
-                      class="max-w-[180px] w-full bg-[#FFEEDB] rounded-[12px] text-[#FF8A00] text-[14px] font-medium text-center py-2"
-                      type="submit"
-                    >
-                      Buy
-                    </button>
-                    <img src="~assets/icons/i_18.svg" alt="h" />
-                  </div>
-                </div>
-              </v-card>
-            </v-slide-group-item>
-          </v-slide-group>
-        </v-sheet>
-      </div>
+      <Carousel v-bind="settings" :breakpoints="breakpoints">
+        <Slide v-for="slide in 10" :key="slide">
+          <div class="carousel__item">
+            <div class="max-w-[300px] w-full mx-auto bg-[white] rounded-[14px] p-2">
+              <div class="flex gap-2 p-2">
+                <img
+                  class="bg-[red] rounded-[8px] p-1 w-[30px] h-[30px]"
+                  src="~assets/icons/i_17.svg"
+                  alt=""
+                />
+                <img
+                  class="bg-[red] rounded-[8px] p-1 w-[30px] h-[30px]"
+                  src="~assets/icons/i_17.svg"
+                  alt=""
+                />
+                <img
+                  class="bg-[red] rounded-[8px] p-1 w-[30px] h-[30px]"
+                  src="~assets/icons/i_17.svg"
+                  alt=""
+                />
+              </div>
+              <img class="mx-5" src="~assets/images/i_3.svg" alt="" />
+              <p class="p-2 text-start">
+                Gold ring <br />
+                in a combined color with <br />
+                chrysolites, cubic zirconia and ro...
+              </p>
+              <div class="flex p-2 gap-3 items-center">
+                <p class="text-[#34398B] font-medium text-[24px]">5,123.21 ₸</p>
+                <p class="text-[#909090]">10,123.21 ₸</p>
+              </div>
+              <div class="flex gap-4 p-2 my-4">
+                <button
+                  class="max-w-[180px] w-full bg-[#FFEEDB] rounded-[12px] text-[#FF8A00] text-[14px] font-medium text-center py-2"
+                  type="submit"
+                >
+                  Buy
+                </button>
+                <img src="~assets/icons/i_18.svg" alt="h" />
+              </div>
+            </div>
+          </div>
+        </Slide>
+  
+        <template #addons>
+          <Navigation />
+        </template>
+      </Carousel>
     </div>
   </div>
   <div class="bg-[#D0D1E4] my-4">
     <div class="max-w-[1300px] w-full mx-auto py-12">
-      <p class="text-[50px] text-white font-medium py-12">News</p>
-      <div>
-        <v-sheet class="mx-auto bg-[#F8CBCD]" elevation="4" max-width="1300">
-          <v-slide-group
-            v-model="model"
-            class="pa-4"
-            selected-class="bg-success"
-            show-arrows
-          >
-            <v-slide-group-item
-              v-for="n in 8"
-              :key="n"
-              v-slot="{ isSelected, toggle, selectedClass }"
-            >
-              <v-card
-                :class="['ma-4', selectedClass]"
-                color="white-lighten-1"
-                height=""
-                width="260"
-                @click="toggle"
-              >
-                <div class="max-w-[300px] w-full mx-auto">
-                  <div class="flex gap-2 p-2">
-                    <img
-                      class="bg-[red] rounded-[8px] p-1 w-[30px] h-[30px]"
-                      src="~assets/icons/i_17.svg"
-                      alt=""
-                    />
-                    <img
-                      class="bg-[red] rounded-[8px] p-1 w-[30px] h-[30px]"
-                      src="~assets/icons/i_17.svg"
-                      alt=""
-                    />
-                    <img
-                      class="bg-[red] rounded-[8px] p-1 w-[30px] h-[30px]"
-                      src="~assets/icons/i_17.svg"
-                      alt=""
-                    />
-                  </div>
-                  <img class="mx-5" src="~assets/images/i_3.svg" alt="" />
-                  <p class="p-2">
-                    Gold ring <br />
-                    in a combined color with <br />
-                    chrysolites, cubic zirconia and ro...
-                  </p>
-                  <div class="flex p-2 gap-3 items-center">
-                    <p class="text-[#34398B] font-medium text-[24px]">
-                      5,123.21 ₸
-                    </p>
-                    <p class="text-[#909090]">10,123.21 ₸</p>
-                  </div>
-                  <div class="flex gap-4 p-2 my-4">
-                    <button
-                      class="max-w-[180px] w-full bg-[#FFEEDB] rounded-[12px] text-[#FF8A00] text-[14px] font-medium text-center py-2"
-                      type="submit"
-                    >
-                      Buy
-                    </button>
-                    <img src="~assets/icons/i_18.svg" alt="h" />
-                  </div>
-                </div>
-              </v-card>
-            </v-slide-group-item>
-          </v-slide-group>
-        </v-sheet>
-      </div>
+      <p class="text-[50px] text-white font-medium py-12">Famous Things</p>
+      <Carousel v-bind="settings" :breakpoints="breakpoints">
+        <Slide v-for="slide in 10" :key="slide">
+          <div class="carousel__item">
+            <div class="max-w-[300px] w-full mx-auto bg-[white] rounded-[14px] p-2">
+              <div class="flex gap-2 p-2">
+                <img
+                  class="bg-[red] rounded-[8px] p-1 w-[30px] h-[30px]"
+                  src="~assets/icons/i_17.svg"
+                  alt=""
+                />
+                <img
+                  class="bg-[red] rounded-[8px] p-1 w-[30px] h-[30px]"
+                  src="~assets/icons/i_17.svg"
+                  alt=""
+                />
+                <img
+                  class="bg-[red] rounded-[8px] p-1 w-[30px] h-[30px]"
+                  src="~assets/icons/i_17.svg"
+                  alt=""
+                />
+              </div>
+              <img class="mx-5" src="~assets/images/i_3.svg" alt="" />
+              <p class="p-2 text-start">
+                Gold ring <br />
+                in a combined color with <br />
+                chrysolites, cubic zirconia and ro...
+              </p>
+              <div class="flex p-2 gap-3 items-center">
+                <p class="text-[#34398B] font-medium text-[24px]">5,123.21 ₸</p>
+                <p class="text-[#909090]">10,123.21 ₸</p>
+              </div>
+              <div class="flex gap-4 p-2 my-4">
+                <button
+                  class="max-w-[180px] w-full bg-[#FFEEDB] rounded-[12px] text-[#FF8A00] text-[14px] font-medium text-center py-2"
+                  type="submit"
+                >
+                  Buy
+                </button>
+                <img src="~assets/icons/i_18.svg" alt="h" />
+              </div>
+            </div>
+          </div>
+        </Slide>
+  
+        <template #addons>
+          <Navigation />
+        </template>
+      </Carousel>
     </div>
   </div>
+
+  <div class="my-[150px] max-w-[1300px] mx-auto w-full">
+    <Carousel v-bind="settings" :breakpoints="breakpoints">
+      <Slide v-for="slide in 10" :key="slide">
+        <div class="carousel__item">
+          <div class="max-w-[300px] w-full mx-auto">
+            <div class="flex gap-2 p-2">
+              <img
+                class="bg-[red] rounded-[8px] p-1 w-[30px] h-[30px]"
+                src="~assets/icons/i_17.svg"
+                alt=""
+              />
+              <img
+                class="bg-[red] rounded-[8px] p-1 w-[30px] h-[30px]"
+                src="~assets/icons/i_17.svg"
+                alt=""
+              />
+              <img
+                class="bg-[red] rounded-[8px] p-1 w-[30px] h-[30px]"
+                src="~assets/icons/i_17.svg"
+                alt=""
+              />
+            </div>
+            <img class="mx-5" src="~assets/images/i_3.svg" alt="" />
+            <p class="p-2">
+              Gold ring <br />
+              in a combined color with <br />
+              chrysolites, cubic zirconia and ro...
+            </p>
+            <div class="flex p-2 gap-3 items-center">
+              <p class="text-[#34398B] font-medium text-[24px]">5,123.21 ₸</p>
+              <p class="text-[#909090]">10,123.21 ₸</p>
+            </div>
+            <div class="flex gap-4 p-2 my-4">
+              <button
+                class="max-w-[180px] w-full bg-[#FFEEDB] rounded-[12px] text-[#FF8A00] text-[14px] font-medium text-center py-2"
+                type="submit"
+              >
+                Buy
+              </button>
+              <img src="~assets/icons/i_18.svg" alt="h" />
+            </div>
+          </div>
+        </div>
+      </Slide>
+
+      <template #addons>
+        <Navigation />
+      </template>
+    </Carousel>
+  </div>
+
   <div class="flex justify-between max-w-[1300px] w-full mx-auto my-[100px]">
     <div class="rounded-[16px]">
       <img src="~assets/images/i_4.svg" alt="" />
@@ -313,16 +315,18 @@
     <div
       class="bg-[#E8F5FF] rounded-[16px] w-50 flex justify-center items-center"
     >
-      <div class="">
-        <div class="flex gap-2 items-center">
+      <div class="max-w-[250px] w-full mx-auto">
+        <div class="flex gap-2 items-center justify-center">
           <img src="~assets/icons/i_19.svg" alt="" />
           <p class="text-[#34398B] font-medium">astra_lomb</p>
         </div>
-        <p class="text-[56px] font-medium text-center">
-          Новости <br />
-          и скидки
+        <p class="text-[56px] font-medium text-center mt-3">
+          Новости
         </p>
-        <p>Lets go</p>
+        <p class="text-[56px] font-medium text-center">
+        и скидки
+        </p>
+        <nuxt-link to=""><button class="my-5 w-full border-[#34398B] border-solid border-2 rounded-[8px] outline-2 text-[#34398B]">Lets go</button></nuxt-link>
       </div>
     </div>
   </div>
@@ -387,7 +391,40 @@
 </template>
 
 <script>
+import { defineComponent } from "vue";
+import { Carousel, Navigation, Slide } from "vue3-carousel";
+
+import "vue3-carousel/dist/carousel.css";
+
 export default {
+  name: "Breakpoints",
+  components: {
+    Carousel,
+    Slide,
+    Navigation,
+  },
+  data: () => ({
+    // carousel settings
+    settings: {
+      itemsToShow: 1,
+      snapAlign: "center",
+    },
+    // breakpoints are mobile first
+    // any settings not specified will fallback to the carousel settings
+    breakpoints: {
+      // 700px and up
+      700: {
+        itemsToShow: 3,
+        snapAlign: "center",
+      },
+      // 1024 and up
+      1024: {
+        itemsToShow: 4,
+        snapAlign: "start",
+      },
+    },
+  }),
+
   setup() {
     return {
       users: [
