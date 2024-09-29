@@ -39,4 +39,12 @@ export class UserApi {
     });
     return data;
   }
+  async getCategories(categoriesData: types.Categoriesdata) {
+    const { data } = await this.request<types.CategoryResponse>({
+      url: "/v1/categories/search",
+      method: "POST",
+      data: categoriesData,
+    });
+    return data;
+  }
 }

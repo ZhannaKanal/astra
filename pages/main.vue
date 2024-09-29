@@ -1,72 +1,20 @@
 <template>
-  <div class="bg-[#34398B] text-[#FFFFFF]">
-    <div class="max-w-[1300px] w-full mx-auto flex justify-between">
-      <div class="flex text-[13px] gap-12 py-2">
-        <p>KZ / RU</p>
-        <div class="flex gap-2">
-          <img class="my-auto" src="~assets/icons/logo.svg" alt="" />
-          <p class="text-[14px] font-medium">Astra-lombard</p>
-        </div>
-        <div class="flex gap-2">
-          <img class="my-auto" src="~assets/icons/icon_1.svg" alt="" />
-          <p>8 800 070 05 40</p>
-        </div>
-        <p>Sales</p>
-      </div>
-      <div class="flex text-[13px] gap-12 py-2">
-        <p>Payment</p>
-        <p>Delivery</p>
-        <div class="flex gap-2">
-          <p>Pick-up point</p>
-          <img
-            class="w-[20px] h-[20px]"
-            src="~assets/icons/icon_2.svg"
-            alt=""
-          />
-        </div>
-      </div>
-    </div>
-  </div>
-  <div
-    class="max-w-[1300px] w-full mx-auto flex justify-between py-10 border-b-2"
-  >
-    <img src="~assets/icons/logo_2.svg" alt="" />
-    <div class="flex gap-4">
-      <input
-        class="placeholder:italic placeholder:text-slate-400 block bg-white w-full border border-[#EBEBEB] rounded-md py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-[#FF8A00] focus:ring-[#FF8A00] focus:ring-1 sm:text-sm"
-        placeholder="Search thing..."
-        type="text"
-      />
-      <img
-        class="border-solid border-[1px] border-[#EBEBEB] rounded-[8px] p-2"
-        src="~assets/icons/i_3.svg"
-        alt=""
-      />
-      <img
-        class="border-solid border-[1px] border-[#EBEBEB] rounded-[8px] p-2"
-        src="~assets/icons/i_4.svg"
-        alt=""
-      />
-      <img
-        class="border-solid border-[1px] border-[#EBEBEB] rounded-[8px] p-2"
-        src="~assets/icons/i_5.svg"
-        alt=""
-      />
-    </div>
-  </div>
+<CustomHeader>
+</CustomHeader>
+
   <div class="max-w-[1300px] w-full mx-auto grid grid-cols-5 my-12 gap-2">
     <div
-      v-for="user in users"
-      :key="user.id"
+      v-for="category in $dataStore.categoryList"
+      :key="category.id"
       class="flex items-center bg-[#F8F8F8] rounded-[14px] gap-4 p-1"
     >
-      <img src="~assets/images/i_1.svg" alt="" />
+      <img class="w-[56px] h-[56px]" :src="category.imagePath" alt="" />
       <nuxt-link to="bonus">
-        <p class="text-[14px]">{{ user.name }}</p>
+        <p class="text-[14px]">{{ category.name }}</p>
       </nuxt-link>
     </div>
   </div>
-  <div class="relative flex justify-end ">
+  <div class="relative flex justify-end">
     <img
       class="absolute z-[-1] w-full py-12"
       src="~assets/images/i_2.svg"
@@ -76,7 +24,9 @@
       Jewelry Market
     </p>
   </div>
-  <div class="max-w-[1300px] w-full mx-auto grid grid-cols-3 gap-5 mt-[80px] mb-8">
+  <div
+    class="max-w-[1300px] w-full mx-auto grid grid-cols-3 gap-5 mt-[80px] mb-8"
+  >
     <div
       class="bg-[#E31E25] text-[white] rounded-[10px] p-4 flex items-center justify-center gap-3"
     >
@@ -103,7 +53,9 @@
       <Carousel v-bind="settings" :breakpoints="breakpoints">
         <Slide v-for="slide in 10" :key="slide">
           <div class="carousel__item">
-            <div class="max-w-[300px] w-full mx-auto bg-[white] rounded-[14px] p-2">
+            <div
+              class="max-w-[300px] w-full mx-auto bg-[white] rounded-[14px] p-2"
+            >
               <div class="flex gap-2 p-2">
                 <img
                   class="bg-[red] rounded-[8px] p-1 w-[30px] h-[30px]"
@@ -143,7 +95,7 @@
             </div>
           </div>
         </Slide>
-  
+
         <template #addons>
           <Navigation />
         </template>
@@ -156,7 +108,9 @@
       <Carousel v-bind="settings" :breakpoints="breakpoints">
         <Slide v-for="slide in 10" :key="slide">
           <div class="carousel__item">
-            <div class="max-w-[300px] w-full mx-auto bg-[white] rounded-[14px] p-2">
+            <div
+              class="max-w-[300px] w-full mx-auto bg-[white] rounded-[14px] p-2"
+            >
               <div class="flex gap-2 p-2">
                 <img
                   class="bg-[red] rounded-[8px] p-1 w-[30px] h-[30px]"
@@ -196,7 +150,7 @@
             </div>
           </div>
         </Slide>
-  
+
         <template #addons>
           <Navigation />
         </template>
@@ -209,7 +163,9 @@
       <Carousel v-bind="settings" :breakpoints="breakpoints">
         <Slide v-for="slide in 10" :key="slide">
           <div class="carousel__item">
-            <div class="max-w-[300px] w-full mx-auto bg-[white] rounded-[14px] p-2">
+            <div
+              class="max-w-[300px] w-full mx-auto bg-[white] rounded-[14px] p-2"
+            >
               <div class="flex gap-2 p-2">
                 <img
                   class="bg-[red] rounded-[8px] p-1 w-[30px] h-[30px]"
@@ -249,7 +205,7 @@
             </div>
           </div>
         </Slide>
-  
+
         <template #addons>
           <Navigation />
         </template>
@@ -320,13 +276,15 @@
           <img src="~assets/icons/i_19.svg" alt="" />
           <p class="text-[#34398B] font-medium">astra_lomb</p>
         </div>
-        <p class="text-[56px] font-medium text-center mt-3">
-          Новости
-        </p>
-        <p class="text-[56px] font-medium text-center">
-        и скидки
-        </p>
-        <nuxt-link to=""><button class="my-5 w-full border-[#34398B] border-solid border-2 rounded-[8px] outline-2 text-[#34398B]">Lets go</button></nuxt-link>
+        <p class="text-[56px] font-medium text-center mt-3">Новости</p>
+        <p class="text-[56px] font-medium text-center">и скидки</p>
+        <nuxt-link to=""
+          ><button
+            class="my-5 w-full border-[#34398B] border-solid border-2 rounded-[8px] outline-2 text-[#34398B]"
+          >
+            Lets go
+          </button></nuxt-link
+        >
       </div>
     </div>
   </div>

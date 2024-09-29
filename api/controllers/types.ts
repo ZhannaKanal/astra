@@ -20,3 +20,20 @@ export type ProfileData = {
 export type Bonusdata = {
   bonuses: number;
 };
+
+export type Categoriesdata = {
+  pageSize: number;
+  orderBy: string[];
+};
+
+export type CategoryResponse = {
+  data: CategoryItem[];
+};
+
+export type CategoryItem = {
+  id: string;
+  name: string;
+  localizedName: string;
+  imagePath: string;
+  bannerImagePath: string;
+};

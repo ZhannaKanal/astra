@@ -1,10 +1,11 @@
 import { api } from "@/api/api";
 import { type DataStore } from "./types";
-import type { RegisterData } from "@/api/controllers/types";
+import type { Categoriesdata, RegisterData } from "@/api/controllers/types";
 export const useDataStore = defineStore("dataStore", {
   state: (): DataStore => ({
     api: api.user,
     user: {},
+    categoryList: []
   }),
   actions: {
     async login(password: string, phoneNumber: string) {
@@ -39,6 +40,14 @@ export const useDataStore = defineStore("dataStore", {
         return response;
       } catch (error: any) {
         console.log("Erroor", error.response.data.exception);
+      }
+    },
+    async getCategories(data: Categoriesdata) {
+      try {
+        const response = await this.api.getCategories(data);
+        this.categoryList = response.data
+      } catch (error: any) {
+        console.log("this is an error: ", error.response.data.exception);
       }
     },
   },
